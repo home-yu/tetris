@@ -1,129 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="shift-js">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TETRIS-GAME">
-    <meta property="og:url" content="https://sammmpen4.github.io/tetris"/>
-    <meta property="og:type" content="html"/>
-    <meta property="og:title" content="TETRIS"/>
-    <meta property="og:description" content="TETRIS-GAME"/>
-    <meta property="og:site_name" content="TETRIS"/>
-    <meta property="og:image" content="images/スクリーンショット 2023-11-04 113629.png"/>
-    <title>TETRIS</title>
-    <link rel="icon" href="images/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
-        h1{
-            -webkit-text-stroke: 2px black;
-        }
-
-        h3{
-            -webkit-text-stroke: 1px black;
-        }
-    </style>
-</head>
-<body class="mt-5" style="font-family: 'Black Ops One'; color: lightgreen; overflow: hidden" background="images/wormhole-739872_1280.png">
-    <div class="container p-0">
-        <div class="row">
-            <div class="col">
-                <h1 class="text-center">SCORE-SYS</h1>
-                <table class="table border table-bordered border-success border-3 text-center">
-                    <thead>
-                        <tr class="table-success">
-                            <th scope="col">LINE</th>
-                            <th scope="col">SCORE</th>
-                        </tr>
-                    </thead>
-                    <tbody class="">
-                        <tr>
-                            <td scope="row">SINGLE</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>    
-                            <td scope="row">DOUBLE</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">TRIPLE</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">TETRIS</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">ALLCLEAR</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">REN(n>1)</td>
-                            <td>LINExREN</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col">
-                <div class="position-relative">
-                    <canvas id="can" class=""></canvas>
-                    <h1 id="tetris" class="position-absolute top-50 start-50 translate-middle fw-bold" style="font-family: 'Black Ops One';"></h1>
-                </div>
-            </div>
-            <div class="col-2">
-                <h1 class="fs-1 text-center">NEXT</h1>
-                <canvas id="can2" style="position: relative; left: 13px;"></canvas>
-                <h1 class="fs-1 text-center mt-3">SCORE</h1>
-                <h1 id="score" class="fs-1 text-center">0</h1>
-                <h1 class="fs-1 text-center">REN</h1>
-                <h1 id="ren" class="fs-1 text-center">0</h1>
-            </div>
-            <div class="col">
-                <h1 class="text-center">OPERATION</h1>
-                <table class="table border table-bordered border-success border-3 text-center">
-                    <thead>
-                        <tr class="table-success bg-transparent">
-                            <th scope="col">KEY</th>
-                            <th scope="col">MOVE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row">A</td>
-                            <td>LEFT</td>
-                        </tr>
-                        <tr>    
-                            <td scope="row">D</td>
-                            <td>RIGHT</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">S</td>
-                            <td>DOWN</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">W</td>
-                            <td>HARD-DROP</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">J</td>
-                            <td>LEFT-ROTATE</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">L</td>
-                            <td>RIGHT-ROTATE</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">Ctrl+R</td>
-                            <td>RESTART</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <h3 style="position: absolute; bottom: 30px; right: 0px;">BGM:MusMus</h3>
-        <h3 style="position: absolute; bottom: 0px; right: 0px;">IMG:Pixabay</h3>
-    </div>
-    <script src="script.js"></script>
-</body>
+	<head>
+		<meta charset="shift-js">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="TETRIS-GAME">
+		<meta property="og:url" content="https://sammmpen4.github.io/tetris"/>
+		<meta property="og:type" content="html"/>
+		<meta property="og:title" content="TETRIS"/>
+		<meta property="og:description" content="TETRIS-GAME"/>
+		<meta property="og:site_name" content="TETRIS"/>
+		<meta property="og:image" content="images/thumbnail.png"/>
+		<title>TETRIS</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="hero-text">
+				<h1>TETRIS</h1>
+				<div class="btn">
+					<a href="/page/play/play_screen.html" class="btn-text">PLAY</a>
+				</div>
+				<div class="btn">
+					<a href="/page/info/index.html" class="btn-text">INFO</a>
+				</div>
+				<div class="footer">
+					<p>creating:sampenpen</p>
+					<p>music:musmus</p>
+					<p>image:pixabay</p>
+				</div>
+			</div>
+			<img src="./images/hero2.png" alt="hero-img" class="hero-img">
+		</div>
+	</body>
 </html>
